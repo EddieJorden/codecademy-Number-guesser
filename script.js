@@ -21,10 +21,10 @@ const compareGuesses = (human) => {
 	console.log('humanScore', humanScore);
 
 	if (humanGuessValue > computerGuessValue) {
-		return false;
+		return false, computerScore + 1;
 	}
 	if (humanGuessValue < computerGuessValue) {
-		return true;
+		return true, humanScore + 1;
 	} else {
 		return true;
 	}
@@ -33,11 +33,18 @@ const compareGuesses = (human) => {
 var compareGuessesResult = compareGuesses(5); /* global var*/
 
 const updateScore = (newVar) => {
-	if (compareGuessesResult) {
+	if (newVar) {
 		console.log('compareGuessResult', compareGuessesResult);
-		humanScore += 1;
+		humanScore + 1;
 	} else {
-		computerScore += 1;
+		computerScore + 1;
 	}
-	console.log('updateScore', updateScore);
 };
+
+var props = updateScore();
+
+const scoreUpdate = (arbitrary) => {
+	props;
+};
+
+console.log('updateScore', props);
